@@ -1,0 +1,2767 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0081)https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<base href="https://javascript.ru/forum/">--><base href=".">
+	
+<meta name="keywords" content="Заполнить,массив,случайными,числами,Заполнить массив случайными числами, ">
+<meta name="description" content="Сразу оговорюсь, что я совсем начинающий. Нашёл несколько реализаций, но подходяще">
+
+
+<link rel="stylesheet" type="text/css" href="./Заполнить массив случайными числами - Javascript-форум_files/style-97d6914a-00003.css" id="vbulletin_css">
+
+
+
+
+
+ 
+
+
+<script type="text/javascript" async="" src="./Заполнить массив случайными числами - Javascript-форум_files/watch.js.Без названия"></script><script type="text/javascript" src="./Заполнить массив случайными числами - Javascript-форум_files/forum.js.Без названия"></script>
+
+
+
+<script async="" src="./Заполнить массив случайными числами - Javascript-форум_files/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7627237725960834",
+    enable_page_level_ads: true
+  });
+</script>
+
+<!--
+<script type="text/javascript" src="/modules/syntaxhighlighter/sh/scripts/shCore.js"></script>
+<script type="text/javascript" src="/modules/syntaxhighlighter/sh/scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="/modules/syntaxhighlighter/sh/scripts/shBrushJava.js"></script>
+<script type="text/javascript" src="/modules/syntaxhighlighter/sh/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="/modules/syntaxhighlighter/sh/scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="/modules/syntaxhighlighter/sh/scripts/shBrushPlain.js"></script>
+<script type="text/javascript" src="/modules/syntaxhighlighter/sh/scripts/shBrushPython.js"></script>
+<script type="text/javascript" src="/modules/syntaxhighlighter/sh/scripts/shBrushXml.js"></script>
+<script type="text/javascript" src="/modules/syntaxhighlighter/sh/scripts/shBrushRuby.js"></script>
+<script type="text/javascript" src="/modules/syntaxhighlighter/sh/scripts/shBrushErlang.js"></script>
+<script type="text/javascript" src="/modules/syntaxhighlighter/sh/scripts/shBrushAS3.js"></script>
+-->
+
+<script type="text/javascript" src="./Заполнить массив случайными числами - Javascript-форум_files/syntaxhighlighter.min.js.Без названия"></script>
+<script type="text/javascript">
+  $(function() { SyntaxHighlighter.highlight() })
+  </script>
+
+<style type="text/css" media="all">@import "/modules/syntaxhighlighter/sh/styles/shCore.css";</style>
+<style type="text/css" media="all">@import "/modules/syntaxhighlighter/sh/styles/shThemeDefault.css";</style>
+<style type="text/css" media="all">@import "/themes/defaultangy/jquery.alerts.css";</style>
+
+<script type="text/javascript"><!-- // hide from W3C validator
+
+var SESSIONURL = "";
+var IMGDIR_MISC = "/forum/images/ca_serenity/misc";
+var vb_disable_ajax = parseInt("0", 10);
+// --></script>
+
+
+<link rel="alternate" type="application/rss+xml" title="Javascript-форум RSS Feed" href="https://javascript.ru/forum/external.php?type=RSS2">
+
+<link rel="alternate" type="application/rss+xml" title="Javascript-форум - Общие вопросы Javascript - RSS Feed" href="https://javascript.ru/forum/external.php?type=RSS2&amp;forumids=3">
+
+
+<script>
+window._gaq =  []
+_gaq.push(['_setAccount', 'UA-2056213-10']);
+_gaq.push(["_addOrganic", "go.mail.ru","q"])
+_gaq.push(["_addOrganic", "nova.rambler.ru","query"])
+_gaq.push(["_addOrganic", "nigma.ru", "s"])
+_gaq.push(["_addOrganic", "blogs.yandex.ru", "text", true])
+_gaq.push(["_addOrganic", "webalta.ru", "q"])
+_gaq.push(["_addOrganic", "aport.ru", "r"])
+_gaq.push(["_addOrganic", "akavita.by", "z"])
+_gaq.push(["_addOrganic", "meta.ua", "q"])
+_gaq.push(["_addOrganic", "bigmir.net", "q"])
+_gaq.push(["_addOrganic", "tut.by", "query"])
+_gaq.push(["_addOrganic", "all.by", "query"])
+_gaq.push(["_addOrganic", "i.ua", "q"])
+_gaq.push(["_addOrganic", "online.ua", "q"])
+_gaq.push(["_addOrganic", "a.ua", "s"])
+_gaq.push(["_addOrganic", "ukr.net", "search_query"])
+_gaq.push(["_addOrganic", "search.com.ua", "q"])
+_gaq.push(["_addOrganic", "search.ua", "query"])
+_gaq.push(["_addOrganic", "poisk.ru", "text"])
+_gaq.push(["_addOrganic", "km.ru", "sq"])
+_gaq.push(["_addOrganic", "liveinternet.ru", "ask"])
+_gaq.push(["_addOrganic", "quintura.ru", "request"])
+_gaq.push(["_addOrganic", "search.qip.ru","query"])
+_gaq.push(["_addOrganic", "gde.ru","keywords"])
+_gaq.push(["_addOrganic", "search.ukr.net","search_query"])
+_gaq.push(["_addOrganic", "gogo.ru","q"])
+_gaq.push(['_trackPageview']);
+_gaq.push(['_trackPageLoadTime']);
+</script>
+
+<script type="text/javascript">
+var ga = document.createElement('script')
+ga.src = location.protocol+'//www.google-analytics.com/ga.js'
+ga.async = true
+document.getElementsByTagName('head')[0].appendChild(ga)
+</script><script src="./Заполнить массив случайными числами - Javascript-форум_files/ga.js.Без названия" async=""></script>
+
+	<title>Заполнить массив случайными числами - Javascript-форум</title>
+	<script type="text/javascript" src="./Заполнить массив случайными числами - Javascript-форум_files/vbulletin_post_loader.js.Без названия"></script>
+</head>
+<body onload="">
+<div id="wrapper">
+<a name="top"></a>
+<table width="960" cellpadding="0" cellspacing="0" align="center" id="maintable">
+<tbody><tr>
+	<td id="maintable-first">
+
+<!-- header table --><table border="0" cellspacing="0" cellpadding="0" class="header-table" width="100%">
+	<tbody><tr>
+		<td align="left"><a href="https://javascript.ru/"><img src="./Заполнить массив случайными числами - Javascript-форум_files/logo.gif" border="0" alt="Javascript.RU" title="Javascript.RU"></a></td>
+		<td align="right" valign="bottom" width="100%" nowrap="nowrap" class="header-table-login">
+
+		
+                <a href="https://javascript.ru/forum/register.php" style="color:white">Регистрация</a> <a href="https://javascript.ru/forum/clogin.php" style="color:white">Вход в сайт</a>
+			
+
+		</td>
+	</tr>
+	</tbody></table><!-- / header table --></td>
+</tr>
+<tr>
+	<td class="maintable-content"><!-- content table --><table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+<tbody><tr>
+	<td class="content-row">
+
+<!-- nav buttons bar -->
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+<tbody><tr>
+	<td class="navbar-row" align="center"><table cellspacing="0" width="100%" align="center" class="navbar-row-table">
+	<tbody><tr align="center" class="vbmenu_dark">
+
+
+<td class="vbmenu_control"><h1><a href="https://javascript.ru/forum/">Форум</a></h1>
+</td>
+
+<td class="vbmenu_control"><a href="https://learn.javascript.ru/">Учебник</a>
+</td>
+
+
+<td class="vbmenu_control"><a href="https://learn.javascript.ru/nodejs-screencast">Node.JS скринкаст</a>
+</td>
+
+
+<td class="vbmenu_control"><a href="http://es5.javascript.ru/">Стандарт языка</a>
+</td>
+
+<td class="vbmenu_control"><h1><a href="https://javascript.ru/manual">Справочник</a></h1>
+</td>
+
+<td class="vbmenu_control"><h1><a href="https://discord.gg/X8yWNWpTQs">Discord чат</a></h1>
+</td>
+
+
+		
+		<td width="100%">&nbsp;</td>
+		
+
+
+</tr>
+</tbody></table>
+<table cellspacing="0" width="100%" align="center" class="navbar-row-table">
+<tbody><tr align="center" class="vbmenu_dark">
+
+
+<td class="vbmenu_control"><a href="https://javascript.ru/doctree">Статьи</a>
+</td>
+
+<td class="vbmenu_control"><a href="https://learn.javascript.ru/quiz">Тест знаний</a>
+</td>
+
+
+<td class="vbmenu_control"><a href="https://javascript.ru/php">Аналоги функций PHP</a>
+</td>
+
+
+<!--
+<td class="vbmenu_control"><a href="http://chat.mibbit.com/?server=utf8.rusnet.org.ru:7770&channel=%23javascript&nick=JsGuest">Онлайн-чат</a>
+</td>
+-->
+
+
+<td class="vbmenu_control"><h1><a href="https://javascript.ru/courses"><span>Курсы javascript</span></a>
+</h1></td>
+
+<!--
+<td class="vbmenu_control"><h1><a href="/ajax">AJAX</a></h1>
+</td>
+-->
+
+<td width="100%">&nbsp;</td>
+
+ 
+
+				
+			
+				
+				<td class="vbmenu_control"><a href="https://javascript.ru/forum/search.php?do=getdaily" accesskey="2">Сообщения за день</a></td>
+				
+				<td id="navbar_search" class="vbmenu_control" style="cursor: pointer;"><a href="https://javascript.ru/forum/search.php" accesskey="4" rel="nofollow">Поиск</a> <script type="text/javascript"> vbmenu_register("navbar_search"); </script> <img src="./Заполнить массив случайными числами - Javascript-форум_files/menu_open2.gif" border="0" title="" alt=""></td>
+			
+			
+		
+
+		
+	</tr>
+	</tbody></table></td>
+</tr>
+</tbody></table>
+<!-- content table -->
+<!-- open content container -->
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+<tbody><tr>
+	<td class="content-row" valign="top">
+
+
+
+
+<!--noindex-->
+<!-- NAVBAR POPUP MENUS -->
+	
+	
+	<!-- header quick search form -->
+	<div class="vbmenu_popup" id="navbar_search_menu" style="display:none">
+		<table cellpadding="4" cellspacing="1" border="0">
+		<tbody><tr class="thead-row">
+			<td class="thead">Поиск по форуму</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="nohilite">
+				<form action="https://javascript.ru/forum/search.php?do=process" method="post">
+					<input type="hidden" name="do" value="process">
+					<input type="hidden" name="quicksearch" value="1">
+					<input type="hidden" name="childforums" value="1">
+					<input type="hidden" name="exactname" value="1">
+					<input type="hidden" name="s" value="">
+					<div><input type="text" class="bginput" name="query" size="25" tabindex="1001"><input type="submit" class="button" value="Вперёд" tabindex="1004"></div>
+					<div style="margin-top:4px">
+						<label for="rb_nb_sp0"><input type="radio" name="showposts" value="0" id="rb_nb_sp0" tabindex="1002" checked="checked">Отображать темы</label>
+						&nbsp;
+						<label for="rb_nb_sp1"><input type="radio" name="showposts" value="1" id="rb_nb_sp1" tabindex="1003">Отображать сообщения</label>
+					</div>					
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option"><a href="https://javascript.ru/forum/search.php" accesskey="4" rel="nofollow">Расширенный поиск</a></td>
+		</tr>
+		
+		</tbody></table>
+	</div>
+	<!-- / header quick search form -->
+	
+
+	
+<!-- / NAVBAR POPUP MENUS -->
+
+<!-- PAGENAV POPUP -->
+
+	<div class="vbmenu_popup" id="pagenav_menu" style="display: none; position: absolute; z-index: 50;">
+		<table cellpadding="4" cellspacing="1" border="0">
+		<tbody><tr class="thead-row">
+			<td class="thead" nowrap="nowrap">К странице...</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="">
+			<form action="https://javascript.ru/forum/" method="get" onsubmit="return this.gotopage()" id="pagenav_form">
+				<input type="text" class="bginput" id="pagenav_itxt" style="font-size:11px" size="4">
+				<input type="button" class="button" id="pagenav_ibtn" value="Вперёд">
+			</form>
+			</td>
+		</tr>
+		</tbody></table>
+	</div>
+
+<!-- / PAGENAV POPUP -->
+<!--/noindex-->
+
+
+<!-- trade-links -->
+
+
+
+
+<!-- breadcrumb -->
+<div id="navbar-row">
+
+	<div class="navbar navbar-top"><a href="https://javascript.ru/" accesskey="1">Главная</a> 
+
+
+ <span class="navbar">&gt; <a href="https://javascript.ru/forum/" accesskey="1">Форум</a></span>
+
+
+	<span class="navbar">» <a href="https://javascript.ru/forum/javascript/">Javascript</a></span>
+
+
+	<span class="navbar">» <a href="https://javascript.ru/forum/misc/">Общие вопросы Javascript</a></span>
+
+ »
+<strong>
+	Заполнить массив случайными числами
+
+</strong>
+
+</div>
+
+</div>
+<br class="spacer8">
+
+
+
+<!-- / breadcrumb -->
+
+<!-- pm notification -->
+
+<!-- / pm notification -->
+
+
+
+
+
+<!-- // Start Welcome Headers // -->
+<!-- google_ad_section_start(weight=ignore) -->
+
+<!-- google_ad_section_end -->
+<!-- // End Welcome Headers // -->
+
+	
+
+
+
+<a name="poststop" id="poststop"></a>
+
+
+
+
+
+<!-- controls above postbits -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:3px">
+<tbody><tr valign="bottom">
+	
+		<td class="smallfont">
+
+
+<a href="https://javascript.ru/forum/newthread.php?do=newthread&amp;f=3" rel="nofollow"><img src="./Заполнить массив случайными числами - Javascript-форум_files/newthread.gif" alt="Создать новую тему" border="0" title="Создать новую тему"></a>
+
+<a href="https://javascript.ru/forum/newreply.php?do=newreply&amp;noquote=1&amp;p=486578" rel="nofollow"><img src="./Заполнить массив случайными числами - Javascript-форум_files/reply.gif" alt="Ответ" border="0" title="Ответ"></a>
+
+
+</td>
+	
+	<td align="right"><div class="pagenav" align="right">
+<table class="tborder" cellpadding="3" cellspacing="0" border="0">
+<tbody><tr>
+	<td class="vbmenu_control" style="font-weight:normal">Страница 1 из 2</td>
+	
+	
+		<td class="alt2"><span class="smallfont" title="Показано с 1 по 10 из 15."><strong>1</strong></span></td>
+ <td class="alt1"><a class="smallfont" href="https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami-2.html" title="с 11 по 15 из 15">2</a></td>
+	<td class="alt1"><a class="smallfont" href="https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami-2.html" title="Следующая страница - с 11 по 15 из 15">&gt;</a></td>
+	
+	<td class="vbmenu_control" title="" id="pagenav.32" style="cursor: pointer;"> <img src="./Заполнить массив случайными числами - Javascript-форум_files/menu_open.gif" border="0" title="" alt=""></td>
+</tr>
+</tbody></table>
+</div></td>
+</tr>
+</tbody></table>
+<!-- / controls above postbits -->
+
+<!-- toolbar -->
+<table class="tcat-rounded" cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+	<tbody><tr>
+		<td width="25" class="tcat-rounded-left"><img src="./Заполнить массив случайными числами - Javascript-форум_files/spacer.gif" width="25" height="27" border="0" alt=""></td>
+
+	<td class="tcat" width="100%">
+		<div class="smallfont">
+		
+		&nbsp;
+		</div>
+	</td>
+	<td class="vbmenu_control" id="threadtools" nowrap="nowrap" style="cursor: pointer;">
+		<a rel="nofollow" href="https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami.html?nojs=1#goto_threadtools">Опции темы</a>
+		<script type="text/javascript"> vbmenu_register("threadtools"); </script> <img src="./Заполнить массив случайными числами - Javascript-форум_files/menu_open.gif" border="0" title="" alt="">
+	</td>
+	
+		<td class="vbmenu_control" id="threadsearch" nowrap="nowrap" style="cursor: pointer;">
+			<a rel="nofollow" href="https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami.html?nojs=1#goto_threadsearch">Искать в теме</a>
+			<script type="text/javascript"> vbmenu_register("threadsearch"); </script> <img src="./Заполнить массив случайными числами - Javascript-форум_files/menu_open.gif" border="0" title="" alt="">
+		</td>
+	
+	
+	
+
+		<td width="10" class="tcat-rounded-right"><img src="./Заполнить массив случайными числами - Javascript-форум_files/spacer.gif" width="10" height="27" border="0" alt=""></td>
+	</tr>
+</tbody></table>
+<!-- / toolbar -->
+
+
+
+<!-- end content table -->
+	</td>
+</tr>
+</tbody></table>
+<!-- / close content container -->
+<!-- / end content table -->
+
+
+
+
+
+<div id="posts"><!-- post #486578 -->
+
+	<!-- open content container -->
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+<tbody><tr>
+	<td class="content-row" valign="top">
+
+	<div id="edit486578" style="padding:0px 0px 4px 0px">
+	<!-- this is not the last post shown on the page -->	
+
+
+
+<table class="tborder" width="100%" id="post486578" cellpadding="4" cellspacing="0" border="0" align="center" style="border-top-width: 0px;">
+<tbody><tr class="thead-row">
+	<td class="thead">
+		<div class="normal" style="float:right">
+			&nbsp;
+			#<a href="https://javascript.ru/forum/486578-post1.html" target="new" id="postcount486578" name="1"><strong>1</strong></a> (<b><a href="https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami.html#post486578" title="Link to this Post">permalink</a></b>) &nbsp;
+			
+		</div>
+		
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post486578"><img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/post_old.gif" alt="Старый" border="0" title="Старый"></a>
+
+
+			
+				03.06.2018, 22:04
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding:0px">
+		<!-- user info -->
+		<table cellpadding="0" cellspacing="4" border="0" width="100%">
+		<tbody><tr>
+			
+			<td nowrap="nowrap">
+			
+				<div>
+					
+
+
+  <a class="bigusername">LEXAdesigns</a>
+                
+
+
+					
+					<img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/user_offline.gif" alt="LEXAdesigns вне форума" border="0" title="LEXAdesigns вне форума">
+
+
+
+
+					
+				</div>
+				
+				<div class="smallfont">Новичок на форуме</div>
+				
+				
+				
+				
+
+
+
+
+
+	
+
+
+<a href="https://javascript.ru/forum/private.php?do=newpm&amp;u=63422" rel="nofollow">
+<img title="Отправить личное сообщение для LEXAdesigns" alt="Отправить личное сообщение для LEXAdesigns" border="0" src="./Заполнить массив случайными числами - Javascript-форум_files/sendpm_blue.gif"></a>
+
+
+
+<a href="https://javascript.ru/forum/members/63422-lexadesigns/" rel="nofollow">
+<img title="Посмотреть профиль" alt="Посмотреть профиль" src="./Заполнить массив случайными числами - Javascript-форум_files/profile_blue.gif" border="0"></a>
+
+
+
+
+
+<a href="https://javascript.ru/forum/search.php?do=finduser&amp;u=63422" rel="nofollow"><img title="Найти все сообщения от LEXAdesigns" alt="Найти все сообщения от LEXAdesigns" border="0" src="./Заполнить массив случайными числами - Javascript-форум_files/find_blue.gif"></a>
+
+
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td valign="top" nowrap="nowrap">
+				
+				<div class="smallfont">
+					<div>Регистрация: 03.06.2018</div>
+					
+					
+					<div>
+						Сообщений: 6
+					</div>
+					
+
+					
+
+<br>
+
+			
+<div>
+		
+</div>
+		</div>
+
+		
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	<td class="alt1" id="td_post_486578">
+	<!-- message, attachments, sig -->
+	
+		
+
+		
+			<!-- icon and title -->
+			<div class="smallfont post-title">
+				<strong>Заполнить массив случайными числами</strong>
+			</div>
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div id="post_message_486578">Сразу оговорюсь, что я совсем начинающий. Нашёл несколько реализаций, но подходящей не обнаружил.<br>
+Задача такая: заполнить массив случайными числами вида Math.round( Math.random() * 100 ).<br>
+<br>
+Вот, наваял такое, но не работает <img src="./Заполнить массив случайными числами - Javascript-форум_files/sad.gif" border="0" alt="" title="Sad" class="inlineimg"><br>
+<br>
+<div id="highlighter_753575" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="https://javascript.ru/forum/#copy" title="копировать в буфер" class="item copyToClipboard" style="width: 16px; height: 16px;">копировать в буфер</a><a href="https://javascript.ru/forum/#viewSource" title="показать чистый исходник в новом окне" class="item viewSource" style="width: 16px; height: 16px;">показать чистый исходник в новом окне</a><a href="https://javascript.ru/forum/#noList" title="Скрыть/показать номера строк" class="item noList" style="width: 16px; height: 16px;">Скрыть/показать номера строк</a><a href="https://javascript.ru/forum/#printSource" title="печать кода с сохранением подсветки" class="item printSource" style="width: 16px; height: 16px;">печать кода с сохранением подсветки</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="keyword">var</code> <code class="plain">arr2 = [];</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="keyword">for</code> <code class="plain">( i = 0; i &lt; 20; i++ ) {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">var</code> <code class="plain">a = Math.round( Math.random() * 100 );</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">var</code> <code class="plain">arr2 = arr2.push(a);</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">document.write( </code><code class="string">'&lt;br&gt;'</code> <code class="plain">+ arr2);</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div></div></div><br>
+<br>
+Выводит единицу.<br>
+Я понимаю это так: объявляем массив, потом перебором 20 раз пушим случайное число в массив. Но не работает так <img src="./Заполнить массив случайными числами - Javascript-форум_files/sad.gif" border="0" alt="" title="Sad" class="inlineimg"><br>
+Кто-нибудь может просветить неразумного?<br>
+<br>
+Заранее благодарю!</div>
+		<!-- / message -->
+	
+		
+		
+		
+
+		
+
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">			<hr size="1" style="color:#E1E1E1">
+				<em>
+				Последний раз редактировалось LEXAdesigns, 03.06.2018 в <span class="time">22:26</span>.
+				
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+	
+		<div style="margin-top: 10px" align="right" class="post-bottom">
+			
+			
+	
+			
+			<!-- controls -->
+			
+			
+			
+				<a href="https://javascript.ru/forum/newreply.php?do=newreply&amp;p=486578" rel="nofollow"><img src="./Заполнить массив случайными числами - Javascript-форум_files/quote.gif" alt="Ответить с цитированием" border="0" title="Ответить с цитированием"></a>
+			
+
+
+
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+		
+	<!-- message, attachments, sig -->
+	
+	</td>
+</tr>
+</tbody></table>
+
+
+
+
+
+	</div>
+		</td>
+</tr>
+</tbody></table>
+<!-- / close content container -->
+
+<!-- / post #486578 --><!-- post #486579 -->
+
+	<!-- open content container -->
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+<tbody><tr>
+	<td class="content-row" valign="top">
+
+	<div id="edit486579" style="padding:0px 0px 4px 0px">
+	<!-- this is not the last post shown on the page -->	
+
+
+
+<table class="tborder" width="100%" id="post486579" cellpadding="4" cellspacing="0" border="0" align="center">
+<tbody><tr class="thead-row">
+	<td class="thead">
+		<div class="normal" style="float:right">
+			&nbsp;
+			#<a href="https://javascript.ru/forum/486579-post2.html" target="new" id="postcount486579" name="2"><strong>2</strong></a> (<b><a href="https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami.html#post486579" title="Link to this Post">permalink</a></b>) &nbsp;
+			
+		</div>
+		
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post486579"><img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/post_old.gif" alt="Старый" border="0" title="Старый"></a>
+
+
+			
+				03.06.2018, 22:11
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding:0px">
+		<!-- user info -->
+		<table cellpadding="0" cellspacing="4" border="0" width="100%">
+		<tbody><tr>
+			<td class="alt2"><a rel="nofollow" href="https://javascript.ru/forum/members/7416-roni/"><img src="./Заполнить массив случайными числами - Javascript-форум_files/1372814054_showfoto.png" width="72" height="72" alt="Аватар для рони" border="0" title="Аватар для рони"></a></td>
+			<td nowrap="nowrap">
+			
+				<div>
+					
+
+
+  <a class="bigusername">рони</a>
+                
+
+
+					
+					<img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/user_offline.gif" alt="рони вне форума" border="0" title="рони вне форума">
+
+
+
+
+					
+				</div>
+				
+				<div class="smallfont">Профессор</div>
+				
+				
+				
+				
+
+
+
+
+
+	
+
+
+<a href="https://javascript.ru/forum/private.php?do=newpm&amp;u=7416" rel="nofollow">
+<img title="Отправить личное сообщение для рони" alt="Отправить личное сообщение для рони" border="0" src="./Заполнить массив случайными числами - Javascript-форум_files/sendpm_blue.gif"></a>
+
+
+
+<a href="https://javascript.ru/forum/members/7416-roni/" rel="nofollow">
+<img title="Посмотреть профиль" alt="Посмотреть профиль" src="./Заполнить массив случайными числами - Javascript-форум_files/profile_blue.gif" border="0"></a>
+
+
+
+
+
+<a href="https://javascript.ru/forum/search.php?do=finduser&amp;u=7416" rel="nofollow"><img title="Найти все сообщения от рони" alt="Найти все сообщения от рони" border="0" src="./Заполнить массив случайными числами - Javascript-форум_files/find_blue.gif"></a>
+
+
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td valign="top" nowrap="nowrap">
+				
+				<div class="smallfont">
+					<div>Регистрация: 27.05.2010</div>
+					
+					
+					<div>
+						Сообщений: 32,720
+					</div>
+					
+
+					
+
+<br>
+
+			
+<div>
+		
+</div>
+		</div>
+
+		
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	<td class="alt1" id="td_post_486579">
+	<!-- message, attachments, sig -->
+	
+		
+
+		
+		
+		<!-- message -->
+		<div id="post_message_486579"><table class="bbcode-rounded bbcode-rounded-quote" cellspacing="0">
+<tbody><tr>
+	<td class="bbcode-rounded-header"><div><span></span></div></td>
+</tr>
+<tr>
+	<td class="bbcode-rounded-author">
+		
+			Сообщение от <strong>LEXAdesigns</strong>
+			
+		
+	</td>
+</tr>
+<tr>
+	<td class="bbcode-rounded-content">
+		<strike>var arr2 =</strike> arr2.push(a);
+	</td>
+</tr>
+<tr>
+	<td class="bbcode-rounded-footer"><div><span></span></div></td>
+</tr>
+</tbody></table><img src="./Заполнить массив случайными числами - Javascript-форум_files/unsure.gif" border="0" alt="" title="Unsure" class="inlineimg"></div>
+		<!-- / message -->
+	
+		
+		
+		
+
+		
+
+		
+
+		
+	
+		<div style="margin-top: 10px" align="right" class="post-bottom">
+			
+			
+	
+			
+			<!-- controls -->
+			
+			
+			
+				<a href="https://javascript.ru/forum/newreply.php?do=newreply&amp;p=486579" rel="nofollow"><img src="./Заполнить массив случайными числами - Javascript-форум_files/quote.gif" alt="Ответить с цитированием" border="0" title="Ответить с цитированием"></a>
+			
+
+
+
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+		
+	<!-- message, attachments, sig -->
+	
+	</td>
+</tr>
+</tbody></table>
+
+
+
+
+
+	</div>
+		</td>
+</tr>
+</tbody></table>
+<!-- / close content container -->
+
+<!-- / post #486579 --><!-- post #486580 -->
+
+	<!-- open content container -->
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+<tbody><tr>
+	<td class="content-row" valign="top">
+
+	<div id="edit486580" style="padding:0px 0px 4px 0px">
+	<!-- this is not the last post shown on the page -->	
+
+
+
+<table class="tborder" width="100%" id="post486580" cellpadding="4" cellspacing="0" border="0" align="center">
+<tbody><tr class="thead-row">
+	<td class="thead">
+		<div class="normal" style="float:right">
+			&nbsp;
+			#<a href="https://javascript.ru/forum/486580-post3.html" target="new" id="postcount486580" name="3"><strong>3</strong></a> (<b><a href="https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami.html#post486580" title="Link to this Post">permalink</a></b>) &nbsp;
+			
+		</div>
+		
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post486580"><img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/post_old.gif" alt="Старый" border="0" title="Старый"></a>
+
+
+			
+				03.06.2018, 22:12
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding:0px">
+		<!-- user info -->
+		<table cellpadding="0" cellspacing="4" border="0" width="100%">
+		<tbody><tr>
+			<td class="alt2"><a rel="nofollow" href="https://javascript.ru/forum/members/7416-roni/"><img src="./Заполнить массив случайными числами - Javascript-форум_files/1372814054_showfoto.png" width="72" height="72" alt="Аватар для рони" border="0" title="Аватар для рони"></a></td>
+			<td nowrap="nowrap">
+			
+				<div>
+					
+
+
+  <a class="bigusername">рони</a>
+                
+
+
+					
+					<img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/user_offline.gif" alt="рони вне форума" border="0" title="рони вне форума">
+
+
+
+
+					
+				</div>
+				
+				<div class="smallfont">Профессор</div>
+				
+				
+				
+				
+
+
+
+
+
+	
+
+
+<a href="https://javascript.ru/forum/private.php?do=newpm&amp;u=7416" rel="nofollow">
+<img title="Отправить личное сообщение для рони" alt="Отправить личное сообщение для рони" border="0" src="./Заполнить массив случайными числами - Javascript-форум_files/sendpm_blue.gif"></a>
+
+
+
+<a href="https://javascript.ru/forum/members/7416-roni/" rel="nofollow">
+<img title="Посмотреть профиль" alt="Посмотреть профиль" src="./Заполнить массив случайными числами - Javascript-форум_files/profile_blue.gif" border="0"></a>
+
+
+
+
+
+<a href="https://javascript.ru/forum/search.php?do=finduser&amp;u=7416" rel="nofollow"><img title="Найти все сообщения от рони" alt="Найти все сообщения от рони" border="0" src="./Заполнить массив случайными числами - Javascript-форум_files/find_blue.gif"></a>
+
+
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td valign="top" nowrap="nowrap">
+				
+				<div class="smallfont">
+					<div>Регистрация: 27.05.2010</div>
+					
+					
+					<div>
+						Сообщений: 32,720
+					</div>
+					
+
+					
+
+<br>
+
+			
+<div>
+		
+</div>
+		</div>
+
+		
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	<td class="alt1" id="td_post_486580">
+	<!-- message, attachments, sig -->
+	
+		
+
+		
+		
+		<!-- message -->
+		<div id="post_message_486580"><b>LEXAdesigns</b>,<br>
+ Пожалуйста, отформатируйте свой код!<br>
+<br>
+Для этого его можно заключить в специальные теги: js/css/html и т.п., например:<br>
+<div id="highlighter_92478" class="syntaxhighlighter nogutter  "><div class="lines"><div class="line alt1"><table><tbody><tr><td class="content"><code class="plain">[js]</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="content"><code class="plain">... ваш код...</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="content"><code class="plain">[/js]</code></td></tr></tbody></table></div></div></div><br>
+<br>
+О том, как вставить в сообщение <i>исполняемый javascript и html-код</i>, а также о дополнительных возможностях форматирования - читайте <a href="http://javascript.ru/formatting" target="_blank" rel="nofollow">http://javascript.ru/formatting</a>.</div>
+		<!-- / message -->
+	
+		
+		
+		
+
+		
+
+		
+
+		
+	
+		<div style="margin-top: 10px" align="right" class="post-bottom">
+			
+			
+	
+			
+			<!-- controls -->
+			
+			
+			
+				<a href="https://javascript.ru/forum/newreply.php?do=newreply&amp;p=486580" rel="nofollow"><img src="./Заполнить массив случайными числами - Javascript-форум_files/quote.gif" alt="Ответить с цитированием" border="0" title="Ответить с цитированием"></a>
+			
+
+
+
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+		
+	<!-- message, attachments, sig -->
+	
+	</td>
+</tr>
+</tbody></table>
+
+
+
+
+
+	</div>
+		</td>
+</tr>
+</tbody></table>
+<!-- / close content container -->
+
+<!-- / post #486580 --><!-- post #486581 -->
+
+	<!-- open content container -->
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+<tbody><tr>
+	<td class="content-row" valign="top">
+
+	<div id="edit486581" style="padding:0px 0px 4px 0px">
+	<!-- this is not the last post shown on the page -->	
+
+
+
+<table class="tborder" width="100%" id="post486581" cellpadding="4" cellspacing="0" border="0" align="center">
+<tbody><tr class="thead-row">
+	<td class="thead">
+		<div class="normal" style="float:right">
+			&nbsp;
+			#<a href="https://javascript.ru/forum/486581-post4.html" target="new" id="postcount486581" name="4"><strong>4</strong></a> (<b><a href="https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami.html#post486581" title="Link to this Post">permalink</a></b>) &nbsp;
+			
+		</div>
+		
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post486581"><img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/post_old.gif" alt="Старый" border="0" title="Старый"></a>
+
+
+			
+				03.06.2018, 22:27
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding:0px">
+		<!-- user info -->
+		<table cellpadding="0" cellspacing="4" border="0" width="100%">
+		<tbody><tr>
+			
+			<td nowrap="nowrap">
+			
+				<div>
+					
+
+
+  <a class="bigusername">LEXAdesigns</a>
+                
+
+
+					
+					<img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/user_offline.gif" alt="LEXAdesigns вне форума" border="0" title="LEXAdesigns вне форума">
+
+
+
+
+					
+				</div>
+				
+				<div class="smallfont">Новичок на форуме</div>
+				
+				
+				
+				
+
+
+
+
+
+	
+
+
+<a href="https://javascript.ru/forum/private.php?do=newpm&amp;u=63422" rel="nofollow">
+<img title="Отправить личное сообщение для LEXAdesigns" alt="Отправить личное сообщение для LEXAdesigns" border="0" src="./Заполнить массив случайными числами - Javascript-форум_files/sendpm_blue.gif"></a>
+
+
+
+<a href="https://javascript.ru/forum/members/63422-lexadesigns/" rel="nofollow">
+<img title="Посмотреть профиль" alt="Посмотреть профиль" src="./Заполнить массив случайными числами - Javascript-форум_files/profile_blue.gif" border="0"></a>
+
+
+
+
+
+<a href="https://javascript.ru/forum/search.php?do=finduser&amp;u=63422" rel="nofollow"><img title="Найти все сообщения от LEXAdesigns" alt="Найти все сообщения от LEXAdesigns" border="0" src="./Заполнить массив случайными числами - Javascript-форум_files/find_blue.gif"></a>
+
+
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td valign="top" nowrap="nowrap">
+				
+				<div class="smallfont">
+					<div>Регистрация: 03.06.2018</div>
+					
+					
+					<div>
+						Сообщений: 6
+					</div>
+					
+
+					
+
+<br>
+
+			
+<div>
+		
+</div>
+		</div>
+
+		
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	<td class="alt1" id="td_post_486581">
+	<!-- message, attachments, sig -->
+	
+		
+
+		
+		
+		<!-- message -->
+		<div id="post_message_486581">Извиняюсь, код поправил</div>
+		<!-- / message -->
+	
+		
+		
+		
+
+		
+
+		
+
+		
+	
+		<div style="margin-top: 10px" align="right" class="post-bottom">
+			
+			
+	
+			
+			<!-- controls -->
+			
+			
+			
+				<a href="https://javascript.ru/forum/newreply.php?do=newreply&amp;p=486581" rel="nofollow"><img src="./Заполнить массив случайными числами - Javascript-форум_files/quote.gif" alt="Ответить с цитированием" border="0" title="Ответить с цитированием"></a>
+			
+
+
+
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+		
+	<!-- message, attachments, sig -->
+	
+	</td>
+</tr>
+</tbody></table>
+
+
+
+
+
+	</div>
+		</td>
+</tr>
+</tbody></table>
+<!-- / close content container -->
+
+<!-- / post #486581 --><!-- post #486582 -->
+
+	<!-- open content container -->
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+<tbody><tr>
+	<td class="content-row" valign="top">
+
+	<div id="edit486582" style="padding:0px 0px 4px 0px">
+	<!-- this is not the last post shown on the page -->	
+
+
+
+<table class="tborder" width="100%" id="post486582" cellpadding="4" cellspacing="0" border="0" align="center">
+<tbody><tr class="thead-row">
+	<td class="thead">
+		<div class="normal" style="float:right">
+			&nbsp;
+			#<a href="https://javascript.ru/forum/486582-post5.html" target="new" id="postcount486582" name="5"><strong>5</strong></a> (<b><a href="https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami.html#post486582" title="Link to this Post">permalink</a></b>) &nbsp;
+			
+		</div>
+		
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post486582"><img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/post_old.gif" alt="Старый" border="0" title="Старый"></a>
+
+
+			
+				03.06.2018, 22:34
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding:0px">
+		<!-- user info -->
+		<table cellpadding="0" cellspacing="4" border="0" width="100%">
+		<tbody><tr>
+			
+			<td nowrap="nowrap">
+			
+				<div>
+					
+
+
+  <a class="bigusername">LEXAdesigns</a>
+                
+
+
+					
+					<img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/user_offline.gif" alt="LEXAdesigns вне форума" border="0" title="LEXAdesigns вне форума">
+
+
+
+
+					
+				</div>
+				
+				<div class="smallfont">Новичок на форуме</div>
+				
+				
+				
+				
+
+
+
+
+
+	
+
+
+<a href="https://javascript.ru/forum/private.php?do=newpm&amp;u=63422" rel="nofollow">
+<img title="Отправить личное сообщение для LEXAdesigns" alt="Отправить личное сообщение для LEXAdesigns" border="0" src="./Заполнить массив случайными числами - Javascript-форум_files/sendpm_blue.gif"></a>
+
+
+
+<a href="https://javascript.ru/forum/members/63422-lexadesigns/" rel="nofollow">
+<img title="Посмотреть профиль" alt="Посмотреть профиль" src="./Заполнить массив случайными числами - Javascript-форум_files/profile_blue.gif" border="0"></a>
+
+
+
+
+
+<a href="https://javascript.ru/forum/search.php?do=finduser&amp;u=63422" rel="nofollow"><img title="Найти все сообщения от LEXAdesigns" alt="Найти все сообщения от LEXAdesigns" border="0" src="./Заполнить массив случайными числами - Javascript-форум_files/find_blue.gif"></a>
+
+
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td valign="top" nowrap="nowrap">
+				
+				<div class="smallfont">
+					<div>Регистрация: 03.06.2018</div>
+					
+					
+					<div>
+						Сообщений: 6
+					</div>
+					
+
+					
+
+<br>
+
+			
+<div>
+		
+</div>
+		</div>
+
+		
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	<td class="alt1" id="td_post_486582">
+	<!-- message, attachments, sig -->
+	
+		
+
+		
+		
+		<!-- message -->
+		<div id="post_message_486582"><table class="bbcode-rounded bbcode-rounded-quote" cellspacing="0">
+<tbody><tr>
+	<td class="bbcode-rounded-header"><div><span></span></div></td>
+</tr>
+<tr>
+	<td class="bbcode-rounded-author">
+		
+			Сообщение от <strong>рони</strong>
+			<a href="https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami.html#post486579" rel="nofollow"><img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/viewpost.gif" border="0" alt="Посмотреть сообщение" title="Посмотреть сообщение"></a>
+		
+	</td>
+</tr>
+<tr>
+	<td class="bbcode-rounded-content">
+		<img src="./Заполнить массив случайными числами - Javascript-форум_files/unsure.gif" border="0" alt="" title="Unsure" class="inlineimg">
+	</td>
+</tr>
+<tr>
+	<td class="bbcode-rounded-footer"><div><span></span></div></td>
+</tr>
+</tbody></table>упс <img src="./Заполнить массив случайными числами - Javascript-форум_files/sad.gif" border="0" alt="" title="Sad" class="inlineimg"><br>
+Спасибо огромное!<br>
+<br>
+Вот так записал:<br>
+<div id="highlighter_652126" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="https://javascript.ru/forum/#copy" title="копировать в буфер" class="item copyToClipboard" style="width: 16px; height: 16px;">копировать в буфер</a><a href="https://javascript.ru/forum/#viewSource" title="показать чистый исходник в новом окне" class="item viewSource" style="width: 16px; height: 16px;">показать чистый исходник в новом окне</a><a href="https://javascript.ru/forum/#noList" title="Скрыть/показать номера строк" class="item noList" style="width: 16px; height: 16px;">Скрыть/показать номера строк</a><a href="https://javascript.ru/forum/#printSource" title="печать кода с сохранением подсветки" class="item printSource" style="width: 16px; height: 16px;">печать кода с сохранением подсветки</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="keyword">var</code> <code class="plain">arr2 = [];</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="keyword">for</code> <code class="plain">( i = 0; i &lt; 20; i++ ) {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">arr2.push( Math.round( Math.random() * 100 ));</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="plain">} document.write( </code><code class="string">'&lt;br&gt;'</code> <code class="plain">+ arr2 );</code></td></tr></tbody></table></div></div></div></div>
+		<!-- / message -->
+	
+		
+		
+		
+
+		
+
+		
+
+		
+	
+		<div style="margin-top: 10px" align="right" class="post-bottom">
+			
+			
+	
+			
+			<!-- controls -->
+			
+			
+			
+				<a href="https://javascript.ru/forum/newreply.php?do=newreply&amp;p=486582" rel="nofollow"><img src="./Заполнить массив случайными числами - Javascript-форум_files/quote.gif" alt="Ответить с цитированием" border="0" title="Ответить с цитированием"></a>
+			
+
+
+
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+		
+	<!-- message, attachments, sig -->
+	
+	</td>
+</tr>
+</tbody></table>
+
+
+
+
+
+	</div>
+		</td>
+</tr>
+</tbody></table>
+<!-- / close content container -->
+
+<!-- / post #486582 --><!-- post #486583 -->
+
+	<!-- open content container -->
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+<tbody><tr>
+	<td class="content-row" valign="top">
+
+	<div id="edit486583" style="padding:0px 0px 4px 0px">
+	<!-- this is not the last post shown on the page -->	
+
+
+
+<table class="tborder" width="100%" id="post486583" cellpadding="4" cellspacing="0" border="0" align="center">
+<tbody><tr class="thead-row">
+	<td class="thead">
+		<div class="normal" style="float:right">
+			&nbsp;
+			#<a href="https://javascript.ru/forum/486583-post6.html" target="new" id="postcount486583" name="6"><strong>6</strong></a> (<b><a href="https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami.html#post486583" title="Link to this Post">permalink</a></b>) &nbsp;
+			
+		</div>
+		
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post486583"><img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/post_old.gif" alt="Старый" border="0" title="Старый"></a>
+
+
+			
+				03.06.2018, 22:45
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding:0px">
+		<!-- user info -->
+		<table cellpadding="0" cellspacing="4" border="0" width="100%">
+		<tbody><tr>
+			<td class="alt2"><a rel="nofollow" href="https://javascript.ru/forum/members/7416-roni/"><img src="./Заполнить массив случайными числами - Javascript-форум_files/1372814054_showfoto.png" width="72" height="72" alt="Аватар для рони" border="0" title="Аватар для рони"></a></td>
+			<td nowrap="nowrap">
+			
+				<div>
+					
+
+
+  <a class="bigusername">рони</a>
+                
+
+
+					
+					<img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/user_offline.gif" alt="рони вне форума" border="0" title="рони вне форума">
+
+
+
+
+					
+				</div>
+				
+				<div class="smallfont">Профессор</div>
+				
+				
+				
+				
+
+
+
+
+
+	
+
+
+<a href="https://javascript.ru/forum/private.php?do=newpm&amp;u=7416" rel="nofollow">
+<img title="Отправить личное сообщение для рони" alt="Отправить личное сообщение для рони" border="0" src="./Заполнить массив случайными числами - Javascript-форум_files/sendpm_blue.gif"></a>
+
+
+
+<a href="https://javascript.ru/forum/members/7416-roni/" rel="nofollow">
+<img title="Посмотреть профиль" alt="Посмотреть профиль" src="./Заполнить массив случайными числами - Javascript-форум_files/profile_blue.gif" border="0"></a>
+
+
+
+
+
+<a href="https://javascript.ru/forum/search.php?do=finduser&amp;u=7416" rel="nofollow"><img title="Найти все сообщения от рони" alt="Найти все сообщения от рони" border="0" src="./Заполнить массив случайными числами - Javascript-форум_files/find_blue.gif"></a>
+
+
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td valign="top" nowrap="nowrap">
+				
+				<div class="smallfont">
+					<div>Регистрация: 27.05.2010</div>
+					
+					
+					<div>
+						Сообщений: 32,720
+					</div>
+					
+
+					
+
+<br>
+
+			
+<div>
+		
+</div>
+		</div>
+
+		
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	<td class="alt1" id="td_post_486583">
+	<!-- message, attachments, sig -->
+	
+		
+
+		
+		
+		<!-- message -->
+		<div id="post_message_486583"><table class="bbcode-rounded bbcode-rounded-quote" cellspacing="0">
+<tbody><tr>
+	<td class="bbcode-rounded-header"><div><span></span></div></td>
+</tr>
+<tr>
+	<td class="bbcode-rounded-author">
+		
+			Сообщение от <strong>LEXAdesigns</strong>
+			
+		
+	</td>
+</tr>
+<tr>
+	<td class="bbcode-rounded-content">
+		Вот так записал:
+	</td>
+</tr>
+<tr>
+	<td class="bbcode-rounded-footer"><div><span></span></div></td>
+</tr>
+</tbody></table>на всякий случай ...<br>
+var arr2 = []<font color="Red">, i</font>;<br>
+или так<br>
+for ( <font color="red">var</font> i = 0; i &lt; 20; i++ )</div>
+		<!-- / message -->
+	
+		
+		
+		
+
+		
+
+		
+
+		
+	
+		<div style="margin-top: 10px" align="right" class="post-bottom">
+			
+			
+	
+			
+			<!-- controls -->
+			
+			
+			
+				<a href="https://javascript.ru/forum/newreply.php?do=newreply&amp;p=486583" rel="nofollow"><img src="./Заполнить массив случайными числами - Javascript-форум_files/quote.gif" alt="Ответить с цитированием" border="0" title="Ответить с цитированием"></a>
+			
+
+
+
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+		
+	<!-- message, attachments, sig -->
+	
+	</td>
+</tr>
+</tbody></table>
+
+
+
+
+
+	</div>
+		</td>
+</tr>
+</tbody></table>
+<!-- / close content container -->
+
+<!-- / post #486583 --><!-- post #486584 -->
+
+	<!-- open content container -->
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+<tbody><tr>
+	<td class="content-row" valign="top">
+
+	<div id="edit486584" style="padding:0px 0px 4px 0px">
+	<!-- this is not the last post shown on the page -->	
+
+
+
+<table class="tborder" width="100%" id="post486584" cellpadding="4" cellspacing="0" border="0" align="center">
+<tbody><tr class="thead-row">
+	<td class="thead">
+		<div class="normal" style="float:right">
+			&nbsp;
+			#<a href="https://javascript.ru/forum/486584-post7.html" target="new" id="postcount486584" name="7"><strong>7</strong></a> (<b><a href="https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami.html#post486584" title="Link to this Post">permalink</a></b>) &nbsp;
+			
+		</div>
+		
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post486584"><img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/post_old.gif" alt="Старый" border="0" title="Старый"></a>
+
+
+			
+				03.06.2018, 23:20
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding:0px">
+		<!-- user info -->
+		<table cellpadding="0" cellspacing="4" border="0" width="100%">
+		<tbody><tr>
+			
+			<td nowrap="nowrap">
+			
+				<div>
+					
+
+
+  <a class="bigusername">LEXAdesigns</a>
+                
+
+
+					
+					<img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/user_offline.gif" alt="LEXAdesigns вне форума" border="0" title="LEXAdesigns вне форума">
+
+
+
+
+					
+				</div>
+				
+				<div class="smallfont">Новичок на форуме</div>
+				
+				
+				
+				
+
+
+
+
+
+	
+
+
+<a href="https://javascript.ru/forum/private.php?do=newpm&amp;u=63422" rel="nofollow">
+<img title="Отправить личное сообщение для LEXAdesigns" alt="Отправить личное сообщение для LEXAdesigns" border="0" src="./Заполнить массив случайными числами - Javascript-форум_files/sendpm_blue.gif"></a>
+
+
+
+<a href="https://javascript.ru/forum/members/63422-lexadesigns/" rel="nofollow">
+<img title="Посмотреть профиль" alt="Посмотреть профиль" src="./Заполнить массив случайными числами - Javascript-форум_files/profile_blue.gif" border="0"></a>
+
+
+
+
+
+<a href="https://javascript.ru/forum/search.php?do=finduser&amp;u=63422" rel="nofollow"><img title="Найти все сообщения от LEXAdesigns" alt="Найти все сообщения от LEXAdesigns" border="0" src="./Заполнить массив случайными числами - Javascript-форум_files/find_blue.gif"></a>
+
+
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td valign="top" nowrap="nowrap">
+				
+				<div class="smallfont">
+					<div>Регистрация: 03.06.2018</div>
+					
+					
+					<div>
+						Сообщений: 6
+					</div>
+					
+
+					
+
+<br>
+
+			
+<div>
+		
+</div>
+		</div>
+
+		
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	<td class="alt1" id="td_post_486584">
+	<!-- message, attachments, sig -->
+	
+		
+
+		
+		
+		<!-- message -->
+		<div id="post_message_486584"><table class="bbcode-rounded bbcode-rounded-quote" cellspacing="0">
+<tbody><tr>
+	<td class="bbcode-rounded-header"><div><span></span></div></td>
+</tr>
+<tr>
+	<td class="bbcode-rounded-author">
+		
+			Сообщение от <strong>рони</strong>
+			<a href="https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami.html#post486583" rel="nofollow"><img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/viewpost.gif" border="0" alt="Посмотреть сообщение" title="Посмотреть сообщение"></a>
+		
+	</td>
+</tr>
+<tr>
+	<td class="bbcode-rounded-content">
+		на всякий случай ...<br>
+var arr2 = []<font color="Red">, i</font>;<br>
+или так<br>
+for ( <font color="red">var</font> i = 0; i &lt; 20; i++ )
+	</td>
+</tr>
+<tr>
+	<td class="bbcode-rounded-footer"><div><span></span></div></td>
+</tr>
+</tbody></table><br>
+А, ну да, переменную объявить <img src="./Заполнить массив случайными числами - Javascript-форум_files/smile.gif" border="0" alt="" title="" class="inlineimg"><br>
+Спасибо! <img src="./Заполнить массив случайными числами - Javascript-форум_files/thank_you2.gif" border="0" alt="" title="Thanks" class="inlineimg"></div>
+		<!-- / message -->
+	
+		
+		
+		
+
+		
+
+		
+
+		
+	
+		<div style="margin-top: 10px" align="right" class="post-bottom">
+			
+			
+	
+			
+			<!-- controls -->
+			
+			
+			
+				<a href="https://javascript.ru/forum/newreply.php?do=newreply&amp;p=486584" rel="nofollow"><img src="./Заполнить массив случайными числами - Javascript-форум_files/quote.gif" alt="Ответить с цитированием" border="0" title="Ответить с цитированием"></a>
+			
+
+
+
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+		
+	<!-- message, attachments, sig -->
+	
+	</td>
+</tr>
+</tbody></table>
+
+
+
+
+
+	</div>
+		</td>
+</tr>
+</tbody></table>
+<!-- / close content container -->
+
+<!-- / post #486584 --><!-- post #486585 -->
+
+	<!-- open content container -->
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+<tbody><tr>
+	<td class="content-row" valign="top">
+
+	<div id="edit486585" style="padding:0px 0px 4px 0px">
+	<!-- this is not the last post shown on the page -->	
+
+
+
+<table class="tborder" width="100%" id="post486585" cellpadding="4" cellspacing="0" border="0" align="center">
+<tbody><tr class="thead-row">
+	<td class="thead">
+		<div class="normal" style="float:right">
+			&nbsp;
+			#<a href="https://javascript.ru/forum/486585-post8.html" target="new" id="postcount486585" name="8"><strong>8</strong></a> (<b><a href="https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami.html#post486585" title="Link to this Post">permalink</a></b>) &nbsp;
+			
+		</div>
+		
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post486585"><img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/post_old.gif" alt="Старый" border="0" title="Старый"></a>
+
+
+			
+				04.06.2018, 00:53
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding:0px">
+		<!-- user info -->
+		<table cellpadding="0" cellspacing="4" border="0" width="100%">
+		<tbody><tr>
+			
+			<td nowrap="nowrap">
+			
+				<div>
+					
+
+
+  <a class="bigusername">LEXAdesigns</a>
+                
+
+
+					
+					<img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/user_offline.gif" alt="LEXAdesigns вне форума" border="0" title="LEXAdesigns вне форума">
+
+
+
+
+					
+				</div>
+				
+				<div class="smallfont">Новичок на форуме</div>
+				
+				
+				
+				
+
+
+
+
+
+	
+
+
+<a href="https://javascript.ru/forum/private.php?do=newpm&amp;u=63422" rel="nofollow">
+<img title="Отправить личное сообщение для LEXAdesigns" alt="Отправить личное сообщение для LEXAdesigns" border="0" src="./Заполнить массив случайными числами - Javascript-форум_files/sendpm_blue.gif"></a>
+
+
+
+<a href="https://javascript.ru/forum/members/63422-lexadesigns/" rel="nofollow">
+<img title="Посмотреть профиль" alt="Посмотреть профиль" src="./Заполнить массив случайными числами - Javascript-форум_files/profile_blue.gif" border="0"></a>
+
+
+
+
+
+<a href="https://javascript.ru/forum/search.php?do=finduser&amp;u=63422" rel="nofollow"><img title="Найти все сообщения от LEXAdesigns" alt="Найти все сообщения от LEXAdesigns" border="0" src="./Заполнить массив случайными числами - Javascript-форум_files/find_blue.gif"></a>
+
+
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td valign="top" nowrap="nowrap">
+				
+				<div class="smallfont">
+					<div>Регистрация: 03.06.2018</div>
+					
+					
+					<div>
+						Сообщений: 6
+					</div>
+					
+
+					
+
+<br>
+
+			
+<div>
+		
+</div>
+		</div>
+
+		
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	<td class="alt1" id="td_post_486585">
+	<!-- message, attachments, sig -->
+	
+		
+
+		
+		
+		<!-- message -->
+		<div id="post_message_486585">Хочу ещё одно узнать.<br>
+Из массива выше надо было найти минимальное и максимальное значение. Смастерил, но опять не работало - там, где Math.max(arr) — выдавало NaN, хотя в массиве номера, и если ввести значения в скобках явно, то всё работало. Нашёл здесь на форуме запись вида Math.max(...arr) — и всё заработало!<br>
+Вопрос: что значит это троеточие?<br>
+<br>
+<div id="highlighter_926836" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="https://javascript.ru/forum/#copy" title="копировать в буфер" class="item copyToClipboard" style="width: 16px; height: 16px;">копировать в буфер</a><a href="https://javascript.ru/forum/#viewSource" title="показать чистый исходник в новом окне" class="item viewSource" style="width: 16px; height: 16px;">показать чистый исходник в новом окне</a><a href="https://javascript.ru/forum/#noList" title="Скрыть/показать номера строк" class="item noList" style="width: 16px; height: 16px;">Скрыть/показать номера строк</a><a href="https://javascript.ru/forum/#printSource" title="печать кода с сохранением подсветки" class="item printSource" style="width: 16px; height: 16px;">печать кода с сохранением подсветки</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="keyword">var</code> <code class="plain">arr = [];</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="keyword">for</code> <code class="plain">( </code><code class="keyword">var</code> <code class="plain">i = 0; i &lt; 20; i++ ) {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">arr.push(Math.round( Math.random() * 100 ));</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="plain">} </code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="plain">document.write( </code><code class="string">'&lt;br&gt;'</code> <code class="plain">+ arr + </code><code class="string">'&lt;br&gt;'</code> <code class="plain">);</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="plain">document.write( </code><code class="string">'&lt;br&gt;'</code> <code class="plain">+ Math.max(...arr) + </code><code class="string">'&lt;br&gt;'</code> <code class="plain">);</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="plain">document.write( </code><code class="string">'&lt;br&gt;'</code> <code class="plain">+ Math.min(...arr) + </code><code class="string">'&lt;br&gt;'</code> <code class="plain">);</code></td></tr></tbody></table></div></div></div><br>
+<br>
+Спасибо!</div>
+		<!-- / message -->
+	
+		
+		
+		
+
+		
+
+		
+
+		
+	
+		<div style="margin-top: 10px" align="right" class="post-bottom">
+			
+			
+	
+			
+			<!-- controls -->
+			
+			
+			
+				<a href="https://javascript.ru/forum/newreply.php?do=newreply&amp;p=486585" rel="nofollow"><img src="./Заполнить массив случайными числами - Javascript-форум_files/quote.gif" alt="Ответить с цитированием" border="0" title="Ответить с цитированием"></a>
+			
+
+
+
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+		
+	<!-- message, attachments, sig -->
+	
+	</td>
+</tr>
+</tbody></table>
+
+
+
+
+
+	</div>
+		</td>
+</tr>
+</tbody></table>
+<!-- / close content container -->
+
+<!-- / post #486585 --><!-- post #486586 -->
+
+	<!-- open content container -->
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+<tbody><tr>
+	<td class="content-row" valign="top">
+
+	<div id="edit486586" style="padding:0px 0px 4px 0px">
+	<!-- this is not the last post shown on the page -->	
+
+
+
+<table class="tborder" width="100%" id="post486586" cellpadding="4" cellspacing="0" border="0" align="center">
+<tbody><tr class="thead-row">
+	<td class="thead">
+		<div class="normal" style="float:right">
+			&nbsp;
+			#<a href="https://javascript.ru/forum/486586-post9.html" target="new" id="postcount486586" name="9"><strong>9</strong></a> (<b><a href="https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami.html#post486586" title="Link to this Post">permalink</a></b>) &nbsp;
+			
+		</div>
+		
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post486586"><img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/post_old.gif" alt="Старый" border="0" title="Старый"></a>
+
+
+			
+				04.06.2018, 01:16
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding:0px">
+		<!-- user info -->
+		<table cellpadding="0" cellspacing="4" border="0" width="100%">
+		<tbody><tr>
+			<td class="alt2"><a rel="nofollow" href="https://javascript.ru/forum/members/7416-roni/"><img src="./Заполнить массив случайными числами - Javascript-форум_files/1372814054_showfoto.png" width="72" height="72" alt="Аватар для рони" border="0" title="Аватар для рони"></a></td>
+			<td nowrap="nowrap">
+			
+				<div>
+					
+
+
+  <a class="bigusername">рони</a>
+                
+
+
+					
+					<img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/user_offline.gif" alt="рони вне форума" border="0" title="рони вне форума">
+
+
+
+
+					
+				</div>
+				
+				<div class="smallfont">Профессор</div>
+				
+				
+				
+				
+
+
+
+
+
+	
+
+
+<a href="https://javascript.ru/forum/private.php?do=newpm&amp;u=7416" rel="nofollow">
+<img title="Отправить личное сообщение для рони" alt="Отправить личное сообщение для рони" border="0" src="./Заполнить массив случайными числами - Javascript-форум_files/sendpm_blue.gif"></a>
+
+
+
+<a href="https://javascript.ru/forum/members/7416-roni/" rel="nofollow">
+<img title="Посмотреть профиль" alt="Посмотреть профиль" src="./Заполнить массив случайными числами - Javascript-форум_files/profile_blue.gif" border="0"></a>
+
+
+
+
+
+<a href="https://javascript.ru/forum/search.php?do=finduser&amp;u=7416" rel="nofollow"><img title="Найти все сообщения от рони" alt="Найти все сообщения от рони" border="0" src="./Заполнить массив случайными числами - Javascript-форум_files/find_blue.gif"></a>
+
+
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td valign="top" nowrap="nowrap">
+				
+				<div class="smallfont">
+					<div>Регистрация: 27.05.2010</div>
+					
+					
+					<div>
+						Сообщений: 32,720
+					</div>
+					
+
+					
+
+<br>
+
+			
+<div>
+		
+</div>
+		</div>
+
+		
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	<td class="alt1" id="td_post_486586">
+	<!-- message, attachments, sig -->
+	
+		
+
+		
+		
+		<!-- message -->
+		<div id="post_message_486586"><table class="bbcode-rounded bbcode-rounded-quote" cellspacing="0">
+<tbody><tr>
+	<td class="bbcode-rounded-header"><div><span></span></div></td>
+</tr>
+<tr>
+	<td class="bbcode-rounded-author">
+		
+			Сообщение от <strong>LEXAdesigns</strong>
+			
+		
+	</td>
+</tr>
+<tr>
+	<td class="bbcode-rounded-content">
+		что значит это троеточие?
+	</td>
+</tr>
+<tr>
+	<td class="bbcode-rounded-footer"><div><span></span></div></td>
+</tr>
+</tbody></table><a href="https://learn.javascript.ru/destructuring#%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80-spread" target="_blank" rel="nofollow">Деструктуризация #оператор-spread</a></div>
+		<!-- / message -->
+	
+		
+		
+		
+
+		
+
+		
+
+		
+	
+		<div style="margin-top: 10px" align="right" class="post-bottom">
+			
+			
+	
+			
+			<!-- controls -->
+			
+			
+			
+				<a href="https://javascript.ru/forum/newreply.php?do=newreply&amp;p=486586" rel="nofollow"><img src="./Заполнить массив случайными числами - Javascript-форум_files/quote.gif" alt="Ответить с цитированием" border="0" title="Ответить с цитированием"></a>
+			
+
+
+
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+		
+	<!-- message, attachments, sig -->
+	
+	</td>
+</tr>
+</tbody></table>
+
+
+
+
+
+	</div>
+		</td>
+</tr>
+</tbody></table>
+<!-- / close content container -->
+
+<!-- / post #486586 --><!-- post #486587 -->
+
+	<!-- open content container -->
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+<tbody><tr>
+	<td class="content-row" valign="top">
+
+	<div id="edit486587" style="padding:0px 0px 4px 0px">
+		
+
+
+
+<table class="tborder" width="100%" id="post486587" cellpadding="4" cellspacing="0" border="0" align="center">
+<tbody><tr class="thead-row">
+	<td class="thead">
+		<div class="normal" style="float:right">
+			&nbsp;
+			#<a href="https://javascript.ru/forum/486587-post10.html" target="new" id="postcount486587" name="10"><strong>10</strong></a> (<b><a href="https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami.html#post486587" title="Link to this Post">permalink</a></b>) &nbsp;
+			
+		</div>
+		
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post486587"><img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/post_old.gif" alt="Старый" border="0" title="Старый"></a>
+
+
+			
+				04.06.2018, 01:21
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding:0px">
+		<!-- user info -->
+		<table cellpadding="0" cellspacing="4" border="0" width="100%">
+		<tbody><tr>
+			<td class="alt2"><a rel="nofollow" href="https://javascript.ru/forum/members/7416-roni/"><img src="./Заполнить массив случайными числами - Javascript-форум_files/1372814054_showfoto.png" width="72" height="72" alt="Аватар для рони" border="0" title="Аватар для рони"></a></td>
+			<td nowrap="nowrap">
+			
+				<div>
+					
+
+
+  <a class="bigusername">рони</a>
+                
+
+
+					
+					<img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/user_offline.gif" alt="рони вне форума" border="0" title="рони вне форума">
+
+
+
+
+					
+				</div>
+				
+				<div class="smallfont">Профессор</div>
+				
+				
+				
+				
+
+
+
+
+
+	
+
+
+<a href="https://javascript.ru/forum/private.php?do=newpm&amp;u=7416" rel="nofollow">
+<img title="Отправить личное сообщение для рони" alt="Отправить личное сообщение для рони" border="0" src="./Заполнить массив случайными числами - Javascript-форум_files/sendpm_blue.gif"></a>
+
+
+
+<a href="https://javascript.ru/forum/members/7416-roni/" rel="nofollow">
+<img title="Посмотреть профиль" alt="Посмотреть профиль" src="./Заполнить массив случайными числами - Javascript-форум_files/profile_blue.gif" border="0"></a>
+
+
+
+
+
+<a href="https://javascript.ru/forum/search.php?do=finduser&amp;u=7416" rel="nofollow"><img title="Найти все сообщения от рони" alt="Найти все сообщения от рони" border="0" src="./Заполнить массив случайными числами - Javascript-форум_files/find_blue.gif"></a>
+
+
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td valign="top" nowrap="nowrap">
+				
+				<div class="smallfont">
+					<div>Регистрация: 27.05.2010</div>
+					
+					
+					<div>
+						Сообщений: 32,720
+					</div>
+					
+
+					
+
+<br>
+
+			
+<div>
+		
+</div>
+		</div>
+
+		
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	<td class="alt1" id="td_post_486587">
+	<!-- message, attachments, sig -->
+	
+		
+
+		
+		
+		<!-- message -->
+		<div id="post_message_486587"><table class="bbcode-rounded bbcode-rounded-quote" cellspacing="0">
+<tbody><tr>
+	<td class="bbcode-rounded-header"><div><span></span></div></td>
+</tr>
+<tr>
+	<td class="bbcode-rounded-author">
+		
+			Сообщение от <strong>LEXAdesigns</strong>
+			
+		
+	</td>
+</tr>
+<tr>
+	<td class="bbcode-rounded-content">
+		где Math.max(arr) — выдавало NaN
+	</td>
+</tr>
+<tr>
+	<td class="bbcode-rounded-footer"><div><span></span></div></td>
+</tr>
+</tbody></table><a href="https://learn.javascript.ru/call-apply#%D0%BC%D0%B5%D1%82%D0%BE%D0%B4-apply" target="_blank" rel="nofollow">метод-apply</a></div>
+		<!-- / message -->
+	
+		
+		
+		
+
+		
+
+		
+
+		
+	
+		<div style="margin-top: 10px" align="right" class="post-bottom">
+			
+			
+	
+			
+			<!-- controls -->
+			
+			
+			
+				<a href="https://javascript.ru/forum/newreply.php?do=newreply&amp;p=486587" rel="nofollow"><img src="./Заполнить массив случайными числами - Javascript-форум_files/quote.gif" alt="Ответить с цитированием" border="0" title="Ответить с цитированием"></a>
+			
+
+
+
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+		
+	<!-- message, attachments, sig -->
+	
+	</td>
+</tr>
+</tbody></table>
+
+
+
+
+
+	</div>
+		</td>
+</tr>
+</tbody></table>
+<!-- / close content container -->
+
+<!-- / post #486587 --><div id="lastpost"></div></div>
+
+<!-- start content table -->
+<!-- open content container -->
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+<tbody><tr>
+	<td class="content-row" valign="top">
+
+<!-- / start content table -->
+
+<!-- controls below postbits -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tbody><tr valign="top">
+	
+		<td class="smallfont"><a href="https://javascript.ru/forum/newreply.php?do=newreply&amp;noquote=1&amp;p=486587" rel="nofollow"><img src="./Заполнить массив случайными числами - Javascript-форум_files/reply.gif" alt="Ответ" border="0" title="Ответ"></a></td>
+		
+	
+		<td align="right"><div class="pagenav" align="right">
+<table class="tborder" cellpadding="3" cellspacing="0" border="0">
+<tbody><tr>
+	<td class="vbmenu_control" style="font-weight:normal">Страница 1 из 2</td>
+	
+	
+		<td class="alt2"><span class="smallfont" title="Показано с 1 по 10 из 15."><strong>1</strong></span></td>
+ <td class="alt1"><a class="smallfont" href="https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami-2.html" title="с 11 по 15 из 15">2</a></td>
+	<td class="alt1"><a class="smallfont" href="https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami-2.html" title="Следующая страница - с 11 по 15 из 15">&gt;</a></td>
+	
+	<td class="vbmenu_control" title="" id="pagenav.144" style="cursor: pointer;"> <img src="./Заполнить массив случайными числами - Javascript-форум_files/menu_open.gif" border="0" title="" alt=""></td>
+</tr>
+</tbody></table>
+</div>
+						
+		</td>
+	
+</tr>
+</tbody></table>
+<!-- / controls below postbits -->
+
+
+
+
+<br>
+
+<div class="smallfont" align="center">
+	<strong>«</strong>
+		<a href="https://javascript.ru/forum/misc/80600-uskorenie-animacii-po-shhelchku.html">Ускорение анимации по щелчку</a>
+		|
+		<a href="https://javascript.ru/forum/misc/80604-sdelat-dva-zaprosa-odnim-klikom.html">Сделать два запроса одним кликом</a>
+	<strong>»</strong>
+</div>
+
+
+<br>
+
+
+
+
+
+
+
+
+<!-- currently active users -->
+
+<!-- end currently active users -->
+
+
+<!-- popup menu contents -->
+<br>
+
+<!-- thread tools menu -->
+<div class="vbmenu_popup" id="threadtools_menu" style="display:none">
+<form action="https://javascript.ru/forum/postings.php?t=73992&amp;pollid=" method="post" name="threadadminform">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tbody><tr class="thead-row">
+		<td class="thead">Опции темы<a name="goto_threadtools"></a></td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option"><img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/printer.gif" alt="Версия для печати" title="Версия для печати"> <a href="https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami-print.html" accesskey="3" rel="nofollow">Версия для печати</a></td>
+	</tr>
+	
+	
+	
+
+
+	
+
+	</tbody></table>
+</form>
+</div>
+<!-- / thread tools menu -->
+<!-- **************************************************** -->
+
+
+<!-- thread search menu -->
+<div class="vbmenu_popup" id="threadsearch_menu" style="display:none">
+<form action="https://javascript.ru/forum/search.php?do=process&amp;searchthreadid=73992" method="post">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tbody><tr class="thead-row">
+		<td class="thead">Искать в теме<a name="goto_threadsearch"></a></td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option" title="nohilite">
+			<input type="hidden" name="s" value="">
+			<input type="hidden" name="do" value="process">
+			<input type="hidden" name="searchthreadid" value="73992">
+			<input type="text" class="bginput" name="query" size="25"><input type="submit" class="button" value="Вперёд"><br>
+		</td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option"><a rel="nofollow" href="https://javascript.ru/forum/search.php?searchthreadid=73992">Расширенный поиск</a></td>
+	</tr>
+	</tbody></table>
+</form>
+</div>
+<!-- / thread search menu -->
+
+
+<!-- **************************************************** -->
+
+
+
+<!-- / popup menu contents -->
+<else>
+<!-- controls for non-popup browsers -->
+
+
+<table class="tborder" cellpadding="4" cellspacing="0" border="0" width="100%" align="center" style="border-top-width:0px">
+<tbody><tr class="thead-row">
+	<td class="thead">Опции темы<a name="goto_threadtools"></a></td>
+	<td class="thead">Искать в теме<a name="goto_threadsearch"></a></td>
+</tr>
+<tr valign="top">
+	<td class="alt1">
+	
+	<!-- thread tools -->
+	<div class="smallfont">
+		
+			<div><img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/printer.gif" alt="Версия для печати" vspace="1" title="Версия для печати"> <a href="https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami-print.html" rel="nofollow">Версия для печати</a></div>
+			<div><img class="inlineimg" src="./Заполнить массив случайными числами - Javascript-форум_files/sendtofriend.gif" alt="Отправить по электронной почте" vspace="1" title="Отправить по электронной почте"> <a href="https://javascript.ru/forum/sendmessage.php?do=sendtofriend&amp;t=73992" rel="nofollow">Отправить по электронной почте</a></div>
+		
+		
+		
+	</div>
+	<!-- / thread tools -->
+	
+	</td>
+	
+	<td class="alt1">
+	
+	<!-- search this thread -->
+	<form action="https://javascript.ru/forum/search.php?do=process&amp;searchthreadid=73992" method="post">
+	<div class="smallfont">
+		<input type="hidden" name="s" value="">
+		<input type="hidden" name="do" value="process">
+		<input type="hidden" name="searchthreadid" value="73992">
+		<strong>Искать в теме</strong>:<br>
+		<input type="text" class="bginput" name="query" size="20" style="width:175px"><input type="submit" class="button" value="Вперёд"><br>
+		<a rel="nofollow" href="https://javascript.ru/forum/search.php?searchthreadid=73992">Расширенный поиск</a>
+	</div>
+	</form>
+	<!-- /  search this thread -->
+	
+	</td>
+	
+</tr>
+
+</tbody></table>
+<br>
+
+
+<!-- / controls for non-popup browsers -->
+
+
+<!-- forum rules and admin links -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+<tbody><tr valign="bottom">
+	<td class="smallfont" align="left">
+		
+	</td>
+	<td class="smallfont" align="right">
+		<table cellpadding="0" cellspacing="0" border="0">
+		
+		<tbody><tr>
+			<td>
+			
+			</td>
+		</tr>		
+		</tbody></table>
+	</td>
+</tr>
+</tbody></table>
+<!-- /forum rules and admin links -->
+
+<br>
+
+<table class="tcat-rounded" cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+	<tbody><tr>
+		<td width="25" class="tcat-rounded-left"><img src="./Заполнить массив случайными числами - Javascript-форум_files/spacer.gif" width="25" height="27" border="0" alt=""></td>
+
+		<td class="tcat" width="100%">
+			<a style="float:right" href="https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami.html#top" onclick="return toggle_collapse(&#39;similarthreads&#39;)"><img id="collapseimg_similarthreads" src="./Заполнить массив случайными числами - Javascript-форум_files/collapse_tcat.gif" alt="" border="0"></a>
+			Похожие темы<a name="similarthreads"></a>
+		</td>
+		<td width="10" class="tcat-rounded-right"><img src="./Заполнить массив случайными числами - Javascript-форум_files/spacer.gif" width="10" height="27" border="0" alt=""></td>
+	</tr>
+</tbody></table>
+<table class="tborder" cellpadding="4" cellspacing="0" border="0" width="100%" align="center" style="border-top-width: 0;">
+<tbody id="collapseobj_similarthreads" style="">
+<tr class="thead" align="center">
+	<td class="thead" width="40%">Тема</td>
+	<td class="thead" width="15%" nowrap="nowrap">Автор</td>
+	<td class="thead" width="20%">Раздел</td>
+	<td class="thead" width="5%">Ответов</td>
+	<td class="thead" width="20%">Последнее сообщение</td>
+</tr>
+<tr>
+	<td class="alt1" align="left"><span class="smallfont"><a href="https://javascript.ru/forum/events/71224-kak-zapolnit-dvukhmernyjj-massiv-proizvolnymi-nomerami-cvetov-randomno.html" title="">Как заполнить двухмерный массив произвольными номерами цветов (рандомно)</a></span></td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">Tungusv</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">Events/DOM/Window</span></td>
+	<td class="alt2" align="center"><span class="smallfont">28</span></td>
+	<td class="alt1" align="right"><span class="smallfont">07.11.2017 <span class="time">20:18</span></span></td>
+</tr>
+<tr>
+	<td class="alt1" align="left"><span class="smallfont"><a href="https://javascript.ru/forum/misc/52097-kak-zapolnit-massiv-ne-povtoryayushhimisya-sluchajjnymi-chislami.html" title="">Как заполнить массив не повторяющимися случайными числами?</a></span></td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">wadim</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">Общие вопросы Javascript</span></td>
+	<td class="alt2" align="center"><span class="smallfont">11</span></td>
+	<td class="alt1" align="right"><span class="smallfont">12.04.2015 <span class="time">14:04</span></span></td>
+</tr>
+<tr>
+	<td class="alt1" align="left"><span class="smallfont"><a href="https://javascript.ru/forum/misc/47790-zapolnit-massiv-sluchajjnymi-unikalnymi-chislami.html" title="">Заполнить массив случайными уникальными числами</a></span></td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">dwarf</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">Общие вопросы Javascript</span></td>
+	<td class="alt2" align="center"><span class="smallfont">1</span></td>
+	<td class="alt1" align="right"><span class="smallfont">07.06.2014 <span class="time">16:52</span></span></td>
+</tr>
+<tr>
+	<td class="alt1" align="left"><span class="smallfont"><a href="https://javascript.ru/forum/misc/42266-sozdat-dvumernyjj-massiv-i-zapolnit.html" title="">Создать двумерный массив и заполнить</a></span></td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">maternik</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">Общие вопросы Javascript</span></td>
+	<td class="alt2" align="center"><span class="smallfont">3</span></td>
+	<td class="alt1" align="right"><span class="smallfont">19.10.2013 <span class="time">20:25</span></span></td>
+</tr>
+<tr>
+	<td class="alt1" align="left"><span class="smallfont"><a href="https://javascript.ru/forum/dom-window/14680-zapolnit-massiv.html" title="">Заполнить массив</a></span></td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">LextoR</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">Элементы интерфейса</span></td>
+	<td class="alt2" align="center"><span class="smallfont">4</span></td>
+	<td class="alt1" align="right"><span class="smallfont">26.01.2011 <span class="time">21:39</span></span></td>
+</tr>
+
+</tbody>
+</table>
+
+<br>
+
+<br>
+
+	</else></td>
+</tr>
+</tbody></table>
+<!-- / close content container -->
+<!-- /content area table -->
+</td></tr>
+</tbody></table><!-- / content table --></td>
+</tr>
+<tr>
+
+	<td class="footer-row"><table cellpadding="4" cellspacing="0" border="0" width="100%" class="page" align="center">
+<tbody><tr>
+	
+	<td class="tfoot" align="right" width="100%">
+
+		<div class="smallfont" style="height:31px;line-height:31px;text-align:center">
+
+
+		
+
+			<strong>
+<span style="padding-right: 20px;">© Илья Кантор, 2007-2021</span> 
+
+<a href="https://javascript.ru/about-project" rel="nofollow">О проекте</a> -
+
+				<a href="https://javascript.ru/contact" rel="nofollow">Обратная связь</a> -
+				
+				
+
+ 
+				<a href="https://javascript.ru/forum/archive/index.php">Архив форума</a> -
+
+				
+				<a href="https://javascript.ru/forum/misc/73992-zapolnit-massiv-sluchajjnymi-chislami.html#top" onclick="self.scrollTo(0, 0); return false;">Вверх</a>
+			</strong>
+
+		</div>
+	</td>
+</tr>
+<tr>
+<td style="text-align:center;color:gray;font-size:12px">
+
+
+
+</td>
+</tr>
+</tbody></table><!-- / footer table --></td>
+</tr>
+</tbody></table><!-- / main table -->
+
+
+
+
+<script type="text/javascript" src="./Заполнить массив случайными числами - Javascript-форум_files/scripts.js.Без названия"></script>
+
+
+<script type="text/javascript">vBulletin_init()</script>
+
+
+</div>
+
+<div style="width:1px;position:absolute;left:-9999px">
+
+
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter1178660 = new Ya.Metrika({id:1178660,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/1178660" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+ <!-- #wrapper -->
+
+
+
+
+
+
+
+</div></body></html>

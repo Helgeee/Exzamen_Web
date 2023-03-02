@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Zotov Oleg">
+    <meta name="copyright" content="Zotov Oleg" />
+    <link rel="stylesheet" href="/Lab42/style.css">
+    <title>JavaScript</title>
+</head>
+<body>
+    <header>
+        <h1>Анимация</h1>
+    </header>
+    <main id="content">
+        <div id="title">Зима</div>
+        <img src="/Lab42/img/winter.jpg" width=600 height=400>
+    </main>    
+    <button id="btnStart">Начать анимацию</button><button id="btnStop">Завершить анимацию</button>
+    <script>
+        let list = [
+            {title :"Зима",  src:"/Lab42/img/winter.jpg",},
+            {title :"Весна", src:"/Lab42/img/spring.jpg",},
+            {title :"Лето",  src:"/Lab42/img/summer.jpg",},
+            {title :"Осень", src:"/Lab42/img/autumn.jpg",},
+        ];
+        let timeout = null;
+        function startAnimate()
+        {
+            if(timeout) clearTimeout(timeout);            
+            timeout = setTimeout(function()
+            {
+                let title = document.querySelector("#title").innerText;
+                let current = list.find((f) => f.title == title);
+                let idx = list.indexOf(current) + 1;
+                if(idx == list.length) idx = 0;
+                let data = list[idx];
+                document.querySelector("#title").innerText = data.title;
+                document.querySelector("#content img").src = data.src;
+                startAnimate();
+            },1000);
+        }
+        btnStart.onclick = startAnimate;
+        btnStop.onclick = function()
+        {
+            if(timeout) clearTimeout(timeout);
+        }
+    </script>
+</body>
+</html>

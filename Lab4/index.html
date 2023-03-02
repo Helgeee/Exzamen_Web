@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Zotov Oleg">
+    <meta name="copyright" content="Zotov Oleg" />
+    <link rel="stylesheet" href="/Lab4/style.css">
+    <title>JavaScript</title>
+    <title>JavaScript</title>
+</head>
+<body>
+    <header>
+        <h1>Изображения</h1>
+    </header>
+    <main id="content">
+        <img src="/Lab4/img/summer.jpg" data-pic="/Lab4/img/winter.jpg" width=600
+        height=400 onMouseOver="changePic()" onMouseOut="changePic()">
+    </main>    
+    <script>
+        function changePic()
+        {
+            let img = document.querySelector("#content img");
+            let oldSrc = img.src;
+            img.src = img.dataset.pic;
+            img.dataset.pic = oldSrc;
+        }
+    </script>
+</body>
+</html>

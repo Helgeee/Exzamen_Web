@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Zotov Oleg">
+    <meta name="copyright" content="Zotov Oleg" />
+    <title>Document</title>
+    <!-- 2Используя классы, задайте  2 класса для H1, 1-ый класс задает для h1 - font-style: italic, 
+        -2ой класс задает для h1 text-decoration:underline. В документе выведите  по 2 заголовка каждого класса.
+         Используя атрибут  id тега style,  задайте цвет текста красный для h1, размер текста 24 pt. задать для тега h3 и  
+        b цвет текста синий для h1, размер текста 18 pt, стиль italic, текст должен быть жирным, использовать группировку селекторов.Веб -->
+</head>
+<style>
+    
+    .gup {
+        font-style: italic;
+        font-size: 18pt;
+    }
+    .up{
+        text-decoration:underline;
+    }
+    #red{
+        color:red;
+        font-style: 24pt;
+    }
+    #blue{
+        color: blue;
+    }
+   </style>
+<body>
+    <h1 class="gup" , id="blue" >
+        Привет
+    </h1>
+   <h2 class="gup" , id="blue">
+        Как дела?
+   </h2>
+   <h3 class="up" , id="red">
+        Хорошо!
+   </h3>
+   <h4  class="up" , id="red">
+        А твои как?
+   </h4>
+</body>
+</html>

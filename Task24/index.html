@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Zotov Oleg">
+    <meta name="copyright" content="Zotov Oleg" />
+    <title>Document</title>
+    <!-- (CSS). Создайте новый документ и разместите в него блок DIV с идентификатором layer. 
+        Опишите идентификатор layer, который будет содержать: желтый фон, зеленую рамочку, отступ от текста до края блока до текста, синие буквы, ширину в 200 пикселей,
+         абсолютное позиционирование и область позиционирования элемента:  clip: rect(40px, auto, auto, 40px);  
+         на экране должна появиться только кадрированная часть текста.	Веб -->
+</head>
+<style>
+    #layer {
+        position: absolute;
+        width: 200px; 
+        height: 200px;
+        clip: rect(40px, auto, auto, 40px); 
+       
+        background-color: rgb(238, 255, 7);
+        border: 5px; 
+        border-radius: 10px;
+        border-color: green;
+    }
+    p{
+        color:blue;
+    }
+   </style>
+<body>
+    <div id="layer">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+             Inventore animi et dolorum vero nisi temporibus ipsam magnam dolor repellat corporis, nihil nulla voluptas veniam, <br>
+              expedita architecto ex fugit, repellendus neque? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, enim doloremque incidunt nisi, inventore quae eveniet vero distinctio id officiis est <br>
+               temporibus perspiciatis ullam velit eius ea recusandae aliquam consequuntur.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Zotov Oleg">
+    <meta name="copyright" content="Zotov Oleg" />
+    <link rel="stylesheet" href="/Lab 1/style.css">
+    <title>JavaScript</title>
+</head>
+<body>
+    <header>
+        <h1>JavaScript</h1>
+    </header>
+
+
+    <main>
+
+        <script>
+            var a = prompt("Привет, как Вас зовут", a);            
+            alert(`Приятно познакомиться, ${a}`);
+            document.querySelector("main").insertAdjacentHTML("afterbegin", `<div>${a}</div>`);      
+            var num1 = prompt("Введите первое число", num1);    
+            var num2 = prompt("Введите второе число", num2);      
+            var res = (+num1 > +num2) ? num1 : num2;
+            alert(`Наибольшее число ${res}`);
+            var num3 = prompt("Факториал какого числа вы хотите найти?", num3);
+            var fact = 1;            
+            for (+num3; num3 > 1; num3--) fact *= num3;
+            alert(`Факториал равен ${fact}`);
+        </script>
+
+    </main>   
+   
+     
+</body>
+</html>

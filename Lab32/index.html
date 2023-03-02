@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Zotov Oleg">
+    <meta name="copyright" content="Zotov Oleg" />
+    <link rel="stylesheet" href="/Lab32/style.css">
+    <title>JavaScript</title>
+    <script>
+        let newSrc = "img/winter.jpg"  ;        
+        let newText =`Зима.<hr>
+            Буря мглою небо кроет,<br>
+            Вихри снежные крутя;<br>
+            То, как зверь, она завоет,<br>
+            То заплачет, как дитя»<br><br>
+        `;
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Forms</h1>
+    </header>
+    <main id="content">
+        <div id="info">
+            Лето.<hr>Июль, таскающий в одёже<br>Пух одуванчиков, лопух,<br>
+            Июль, домой сквозь окна вхожий,<br>Всё громко говорящий вслух <br><br>      
+        </div>
+        <img src="/Lab32/img/summer.jpg" width="100px" height="100px">        
+    </main>    
+    <button id="btn">Смена времени года</button>
+    <script>        
+        btn.onclick = function(e)
+        {
+            let curImg = document.querySelector("#content img");
+            let textBlock = document.querySelector("#info");
+            let oldSrc = curImg.src;            
+            let oldText = textBlock.innerHTML;
+            textBlock.innerHTML = newText;
+            let img = new Image(100, 100);
+            img.src = newSrc;
+            curImg.parentNode.replaceChild(img, curImg);        
+            newText = oldText;
+            newSrc = oldSrc;
+        }
+    </script>
+</body>
+</html>

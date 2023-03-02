@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Zotov Oleg">
+    <meta name="copyright" content="Zotov Oleg" />
+    <link rel="stylesheet" href="/Lab3/style.css">
+    <title>JavaScript</title>
+</head>
+<body>
+    <header>
+        <h1>Анкета</h1>
+    </header>
+    <main id="content">
+        <div id="info"></div>
+        <form id="anketaForm" action="javascript:void(0)">
+            <table>
+
+                <tr><td style="width: 190px;"><label>Имя:</label></td><td><input type="text" name="name" value=""></td></tr>
+                <tr><td><label>Город:</label></td><td><input type="text" name="city" value=""></td></tr>
+                <tr><td><label>Увлечения:</label></td><td><input type="text" name="hobby" value=""></td></tr>
+                <tr><td><label>Любимая книга:</label></td><td><input type="text" name="favBook" value=""></td></tr>
+                <tr><td><label>Любимый фильм:</label></td><td><input type="text" name="favMovie" value=""></td></tr>
+                <tr><td><label>Домашний питомец:</label></td><td><input type="text" name="pets" value=""></td></tr>
+                <tr><td><label>Страна, которую<br> хотите посетить:</label></td><td><input type="text" name="country" value=""></td></tr>
+                
+            </table>
+            <button>Готово</button>
+        </form>
+    </main>    
+
+<script>
+       anketaForm.onsubmit = function(e)
+       {
+            let obj = {};
+            var fd = new FormData(anketaForm);
+            for (const pair of fd.entries()) obj[pair[0]] = pair[1];
+            if(!Object.values(obj).filter(Boolean).length)
+            {
+                alert('Все поля надо заполнить');
+                return;
+            }
+            let str =`Я, ${obj.name}, живу в городе ${obj.city}, увлекаюсь ${obj.hobby}. 
+            У меня есть домашний питомец ${obj.pets}. 
+            Мне нравится книга ${obj.favBook} и фильм ${obj.favMovie}. Мечтаю посетить ${obj.country}.`;
+            document.querySelector("#info").insertAdjacentHTML("afterbegin", `<p>${str}</p>`);
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Создайте пользовательскую функцию, которая будет запрашивать ввести пользователя Фамилию, Имя и Отчество. Вне зависимости ввели ли фамилию, 
+        имя и отчество большими или маленькими буквами надо вывести в документ «Добрый день, ИВАНОВ А.В. Мы рады приветствовать вас на сайте <имя сайта>». (JavaScript) -->
+</head>
+<body>
+    <script>
+        var a = prompt("Здравствуйте, введите вашу фамилию", a);     
+        var b = prompt("введите ваше имя", b);     
+        var c = prompt("введите ваше отчество ", c);            
+        let v = a+ " " + b + " "+ c;
+        alert(`Приятно познакомиться, ${v.toUpperCase()}  `);
+        
+        alert(`Добрый день, ${v.toUpperCase()}  Мы рады приветствовать вас на сайте Ozon».  `);
+    </script>
+</body>
+</html>
